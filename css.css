@@ -1,0 +1,479 @@
+:root{
+
+	
+	--bug-initial-path:polygon(
+		/* head left */
+		45% 15%,
+		40% 10%,
+		40% 5%,
+		45% 0%,
+		/* head right*/
+		55% 0%,
+		60% 5%,
+		60% 10%,
+		55% 15%,
+		/* right side */
+		60% 20%,
+		60% 25%,
+		/* right leg 1 */
+		70% 25%,
+		80% 27.5%,
+		70% 30%,
+		/* right side between leg 1 and 2 */
+		60% 30%,
+		60% 35%,
+		/* right leg 2 */
+		70% 35%,
+		80% 37.5%,
+		70% 40%,
+		/* right side between leg 2 and 3 */
+		60% 40%,
+		60% 45%,
+		/* right leg 3 */
+		70% 45%,
+		80% 47.5%,
+		70% 50%,
+		/* end right thorax */
+		60% 50%,
+		/* right abdom  top*/
+		60% 55%,
+		/* sections of right abdomen */
+		60% 60%,
+		60% 65%,
+		60% 70%,
+		60% 75%,
+		60% 80%,
+		60% 85%,
+		/* end right side */
+		60% 90%,
+		
+
+		/* end */
+		50% 100%,
+
+		/* bottom left abdomen */
+		40% 90%,
+		/* sections of left abdomen */
+		40% 85%,
+		40% 80%,
+		40% 75%,
+		40% 70%,
+		40% 65%,
+		40% 60%,
+		/* left abdom top */
+		40% 55%,
+		/* end left thorax */
+		40% 50%,
+		/* left leg 3 */
+		30% 50%,
+		20% 47.5%,
+		30% 45%,
+		/* left side between leg 2 and 3 */
+		40% 45%,
+		40% 40%,
+		/* left leg 2 */
+		30% 40%,
+		20% 37.5%,
+		30% 35%,
+		/* left side between leg 2 and 1 */
+		40% 35%,
+		40% 30%,
+		/* left leg 1 */
+		30% 30%,
+		20% 27.5%,
+		30% 25%,
+		/* left side start */
+		40% 25%,
+		40% 20%
+	);
+}
+
+
+nav{
+
+	position: fixed;
+	bottom:0;
+	left:0;
+	padding:0em 0;
+	overflow: hidden;
+	height:5em;
+	background-color: rgb(200,200,200);
+}
+nav a{
+	
+display: inline-block;
+	padding:2em;
+	background-color: rgb(200,200,200);
+	
+
+	transition: background 0.1s;
+}
+
+
+nav a:hover {
+	background-color: rgb(150,200,200);
+	z-index: 900;
+
+}
+
+nav a:hover::after,nav a:hover::before,nav a:hover ~ a::after,nav a:hover ~ a::before{
+	
+	height:20vw;
+	width:20vw;
+	background-color: rgba(0,200,0,1);
+	/* content:"\A i\A n\A s\A e\A c\A t"; */
+	content:"";
+	text-align: center;
+	position: fixed;
+	margin-left:-10vw;
+	/* top:20%; */
+	left:auto;
+	right:calc(auto - 5em);
+	clip-path: var(--bug-initial-path);
+	animation-name: bugwalk,bugmove;
+	animation-duration: 0.3s,5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	
+	z-index: -1;
+	/* white-space: pre-wrap; */
+
+}
+
+ nav a:hover::before {
+	background-color: rgba(0,0,200,0.7);
+	transform: rotate(60deg);
+	animation-name: bugwalk,bugmove2;
+	animation-duration: 0.3s,6s;
+
+} 
+nav a:hover ~ a::after,nav a:hover ~ a::before{
+	background-color: rgba(150,0,0,0.7);
+	height:3vw;
+	width:3vw;
+	animation-name: bugwalk,bugmove3;
+	animation-duration: 0.3s,30s;
+	/* font-size: 0.3vw; */
+}
+
+@keyframes bugmove{
+	from{
+	
+		bottom: -20vw;
+	}
+
+	to{
+		bottom: 100vh;
+		offset-distance: 100%;
+	}
+}
+
+@keyframes bugmove2{
+	from{
+		margin-left:-10vw;
+		bottom: -20vw;
+
+		
+	}
+
+	to{
+		margin-left:100%;
+		 bottom: 100vh;
+		
+	}
+}
+@keyframes bugmove3{
+	from{
+		margin-left:-1.5%;
+		bottom: -20%;
+
+		
+	}
+
+	to{
+		margin-left:-1.5%;
+		 bottom: 100vh;
+		
+	}
+}
+
+
+
+@keyframes bugwalk{
+from{
+
+	clip-path:  var(--bug-initial-path);
+
+}
+
+
+25%{
+	clip-path: polygon(
+		/* head left */
+		45% 15%,
+		40% 10%,
+		40% 5%,
+		45% 0%,
+		/* head right*/
+		55% 0%,
+		60% 5%,
+		60% 10%,
+		55% 15%,
+		/* right side */
+		60% 20%,
+		60% 25%,
+		/* right leg 1 */
+		70% 23%,
+		82% 25.5%,
+		70% 28%,
+		/* right side between leg 1 and 2 */
+		60% 30%,
+		60% 35%,
+		/* right leg 2 */
+		70% 35%,
+		80% 37.5%,
+		70% 40%,
+		/* right side between leg 2 and 3 */
+		60% 40%,
+		60% 45%,
+		/* right leg 3 */
+		70% 45%,
+		80% 47.5%,
+		70% 50%,
+		/* end right thorax */
+		60% 50%,
+		/* right abdom  top*/
+		60% 55%,
+		/* sections of right abdomen */
+		61% 60%,
+		60% 65%,
+		61% 70%,
+		60% 75%,
+		61% 80%,
+		60% 85%,
+		/* end right side */
+		62% 90%,
+		/* end */
+		52% 100%,
+
+		/* bottom left abdomen */
+		42% 90%,
+		/* sections of left abdomen */
+		41% 85%,
+		40% 80%,
+		41% 75%,
+		40% 70%,
+		41% 65%,
+		40% 60%,
+		/* left abdom top */
+		40% 55%,
+		/* end left thorax */
+		40% 50%,
+		/* left leg 3 */
+		30% 50%,
+		20% 47.5%,
+		30% 45%,
+		/* left side between leg 2 and 3 */
+		40% 45%,
+		40% 40%,
+		/* left leg 2 */
+		30% 40%,
+		20% 37.5%,
+		30% 35%,
+		/* left side between leg 2 and 1 */
+		40% 35%,
+		40% 30%,
+		/* left leg 1 */
+		30% 28%,
+		18% 25.5%,
+		30% 23%,
+		/* left side start */
+		40% 25%,
+		40% 20%
+	);
+}
+
+
+
+50%{
+	clip-path: polygon(
+		/* head left */
+		45% 15%,
+		40% 10%,
+		40% 5%,
+		45% 0%,
+		/* head right*/
+		55% 0%,
+		60% 5%,
+		60% 10%,
+		55% 15%,
+		/* right side */
+		60% 20%,
+		60% 25%,
+		/* right leg 1 */
+		70% 23%,
+		82% 25.5%,
+		70% 28%,
+		/* right side between leg 1 and 2 */
+		60% 30%,
+		60% 35%,
+		/* right leg 2 */
+		70% 33%,
+		82% 35.5%,
+		70% 38%,
+		/* right side between leg 2 and 3 */
+		60% 40%,
+		60% 45%,
+		/* right leg 3 */
+		70% 45%,
+		80% 47.5%,
+		70% 50%,
+		/* end right thorax */
+		60% 50%,
+		/* right abdom  top*/
+		60% 55%,
+		/* sections of right abdomen */
+		60% 60%,
+		59% 65%,
+		60% 70%,
+		59% 75%,
+		60% 80%,
+		59% 85%,
+		/* end right side */
+		58% 90%,
+		/* end */
+		48% 100%,
+
+		/* bottom left abdomen */
+		38% 90%,
+		/* sections of left abdomen */
+		40% 85%,
+		39% 80%,
+		40% 75%,
+		39% 70%,
+		40% 65%,
+		39% 60%,
+		/* left abdom top */
+		40% 55%,
+		/* end left thorax */
+		40% 50%,
+		/* left leg 3 */
+		30% 50%,
+		20% 47.5%,
+		30% 45%,
+		/* left side between leg 2 and 3 */
+		40% 45%,
+		40% 40%,
+		/* left leg 2 */
+		30% 38%,
+		18% 35.5%,
+		30% 33%,
+		/* left side between leg 2 and 1 */
+		40% 35%,
+		40% 30%,
+		/* left leg 1 */
+		30% 28%,
+		18% 25.5%,
+		30% 23%,
+		/* left side start */
+		40% 25%,
+		40% 20%
+	);
+}
+
+
+75%{
+	clip-path: polygon(
+		/* head left */
+		45% 15%,
+		40% 10%,
+		40% 5%,
+		45% 0%,
+		/* head right*/
+		55% 0%,
+		60% 5%,
+		60% 10%,
+		55% 15%,
+		/* right side */
+		60% 20%,
+		60% 25%,
+		/* right leg 1 */
+		70% 23%,
+		82% 25.5%,
+		70% 28%,
+		/* right side between leg 1 and 2 */
+		60% 30%,
+		60% 35%,
+		/* right leg 2 */
+		70% 33%,
+		82% 35.5%,
+		70% 38%,
+		/* right side between leg 2 and 3 */
+		60% 40%,
+		60% 45%,
+		/* right leg 3 */
+		70% 43%,
+		82% 45.5%,
+		70% 48%,
+		/* end right thorax */
+		60% 50%,
+		/* right abdom  top*/
+		60% 55%,
+		/* sections of right abdomen */
+		59% 60%,
+		61% 65%,
+		59% 70%,
+		61% 75%,
+		59% 80%,
+		61% 85%,
+		/* end right side */
+		60% 90%,
+		/* end */
+		50% 98%,
+
+		/* bottom left abdomen */
+		40% 90%,
+		/* sections of left abdomen */
+		39% 85%,
+		41% 80%,
+		39% 75%,
+		41% 70%,
+		39% 65%,
+		41% 60%,
+		/* left abdom top */
+		40% 55%,
+		/* end left thorax */
+		40% 50%,
+		/* left leg 3 */
+		30% 48%,
+		18% 45.5%,
+		30% 43%,
+		/* left side between leg 2 and 3 */
+		40% 45%,
+		40% 40%,
+		/* left leg 2 */
+		30% 38%,
+		18% 35.5%,
+		30% 33%,
+		/* left side between leg 2 and 1 */
+		40% 35%,
+		40% 30%,
+		/* left leg 1 */
+		30% 28%,
+		18% 25.5%,
+		30% 23%,
+		/* left side start */
+		40% 25%,
+		40% 20%
+	);
+}
+
+
+to{
+
+	clip-path: var(--bug-initial-path);
+
+}
+
+
+}
